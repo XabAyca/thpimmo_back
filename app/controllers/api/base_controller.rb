@@ -15,4 +15,6 @@ class Api::BaseController < ApplicationController
     }, status: 404
   end
 
+  
+
 end

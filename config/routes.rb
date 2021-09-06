@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :locations
-  resources :properties
-  resources :categories
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :users, only: %w[show]
+      resources :properties
+      resources :locations, only: %i[index]
+      resources :categories, only: %i[index]
     end
   end
 

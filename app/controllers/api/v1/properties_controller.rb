@@ -1,5 +1,7 @@
-class PropertiesController < ApplicationController
+class Api::V1::PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :update, :delete]
+  before_action :is_creator, only: [ :update, :delete]
 
   # GET /properties
   def index
@@ -16,9 +18,9 @@ class PropertiesController < ApplicationController
   # POST /properties
   def create
     @property = Property.new(property_params)
-
+    @property.user = current_user
     if @property.save
-      render json: @property, status: :created, location: @property
+      render json: @property, status: :created
     else
       render json: @property.errors, status: :unprocessable_entity
     end
@@ -46,6 +48,12 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.fetch(:property, {})
+      params.require(:property).permit(:title, :description, :price, :location_id, :category_id)
+    end
+
+    def is_creator
+      if current_user != @property.user
+        render json: {"errors":[{"message":"Access denied"}]}, status: 401
+      end
     end
 end
