@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :locations
+  resources :properties
   resources :categories
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
