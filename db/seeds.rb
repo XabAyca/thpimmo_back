@@ -6,26 +6,46 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+p "*" * 50
+p " " * 50
+p "                 STARTING SEEDING                 "
+p " " * 50
+p "*" * 50
+
+p "Destroy curent data..."
+
+p "Destroying User... #{User.count} "
+Userer.destroy_all
+
+p "Destroying Category... #{Category.count} "
 Category.destroy_all
+
+p "Destroying Location... #{Location.count} "
 Location.destroy_all
+
+p "Destroying Property... #{Property.count} "
 Property.destroy_all
+
+p "-" * 50
+p "-" * 50
 
 
 users = []
+categories = ['house', 'apartment', 'villa', 'chalet']
 properties = []
-categories = ['house', 'apartment', 'villa']
 user_number = 15
 
-
+p "USERS"
 user_number.times do |i|
   users << User.create(email: Faker::Internet.email, password: "azerty1234", password_confirmation: "azerty1234")
-
   system("clear")
   puts "#{i+1} users created"
   puts "|"+("█"*(i+1))+(" "*((user_number-1)-i))+"|"
 end
 
+p "-" * 50
+
+p "CATEGORIES"
 categories.each_with_index do |category,i|
   Category.create(name:category)
   system("clear")
@@ -40,7 +60,10 @@ end
   puts "|"+("█"*(i+1))+(" "*((10-1)-i))+"|"
 end
 
-30.times do |i|
+# Properties
+
+Property.create(title: 
+  )
   Property.create(title: Faker::Movies::StarWars.planet, 
                   price: rand(500..2000), 
                   description: Faker::Lorem.sentence(word_count: 20),
