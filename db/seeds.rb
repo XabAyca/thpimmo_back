@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 p "*" * 50
 p " " * 50
 p "                 STARTING SEEDING                 "
@@ -15,7 +7,7 @@ p "*" * 50
 p "Destroy curent data..."
 
 p "Destroying User... #{User.count} "
-Userer.destroy_all
+User.destroy_all
 
 p "Destroying Category... #{Category.count} "
 Category.destroy_all
@@ -62,11 +54,11 @@ end
 
 # Properties
 
-Property.create(title: 
-  )
+30.times do |i|
   Property.create(title: Faker::Movies::StarWars.planet, 
                   price: rand(500..2000), 
                   description: Faker::Lorem.sentence(word_count: 20),
+                  photo: "https://picsum.photos/300/300",
                   user: User.all.sample,
                   location: Location.all.sample,
                   category: Category.all.sample)
