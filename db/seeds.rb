@@ -18,9 +18,16 @@ user_number=15
 user_number.times do |i|
   users << User.create(email: Faker::Internet.email, password: "azerty1234", password_confirmation: "azerty1234")
 
-    system("clear")
+  system("clear")
   puts "#{i+1} users created"
   puts "|"+("█"*(i+1))+(" "*((user_number-1)-i))+"|"
+end
+
+categories.each_with_index do |category,i|
+  Category.create(name:category)
+  system("clear")
+  puts "#{i+1} category created"
+  puts "|"+("█"*(i+1))+(" "*((categories.length-1)-i))+"|"
 end
 
 puts ""
