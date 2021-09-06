@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_09_06_122345) do
     t.string "title"
     t.float "price"
     t.text "description"
+    t.string "photo"
     t.bigint "user_id"
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
