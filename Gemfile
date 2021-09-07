@@ -32,6 +32,10 @@ group :development, :test do
   gem 'table_print'
   gem 'awesome_print'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 group :development do
