@@ -36,7 +36,7 @@ RSpec.describe Property, :type => :model do
 
   it "is not valid with a title too long" do 
     expect(Property.create(
-      title:'To sell my house every day a write code because I love this so much...',
+      title:'To sell my house every day a write code because I love this so much.... Yet I am here and I sing because I love life',
       description:"La vie de bohème au 5ème étage sans ascenseur! Charmant studio avec mezzanine sous les toits avec tomettes au sol, se composant d'une entrée, d'un salon avec cheminée donnant sur une petite cuisine ouverte avec bar; une chambre pour deux personnes en mezzanine et une salle de bain avec baignoire et lit de repos",
       price:1500,
       photo:"https://picsum.photos/300/300",
