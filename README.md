@@ -1,24 +1,96 @@
-# README
+# Request on our API thpimmo_back :
+base URL : [https://thpimmo-back.herokuapp.com](https://thpimmo-back.herokuapp.com/)   
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### SIgn up
+Method: POST   
+`/api/signup`   
+- params :
+```json
+{  
+"user":
+  {"email":"test@test.test",   
+  "password":"password",   
+  "password_confirmation":"password"   
+  }   
+}
+``` 
+---------
 
-Things you may want to cover:
+### Login
+method: POST   
+`/api/login`   
+- params :
+```json
+{  
+"user":
+  {"email":"test@test.test",   
+  "password":"password"  
+  }   
+}
+``` 
+---------
 
-* Ruby version
+### Logout
+Method: DELETE   
+`/api/logout`   
+```json
+{
+  "Header" : 
+    { 
+    "Authorization" : "Bearer <TOKEN>"
+    }
+ }
+ ```  
+-------
+### User (Show)
+Method: GET   
+`/api/v1/users/:id`   
+```json
+{
+  "Header" : 
+    { 
+    "Authorization" : "Bearer <TOKEN>"
+    }
+ }
+ ```  
+-------
 
-* System dependencies
+### Category (Index)
+Method: GET   
+`/api/v1/categories`   
+```json
+{
+  "Header" : 
+    { 
+    "Authorization" : "Bearer <TOKEN>"
+    }
+ }
+ ```  
+-------
 
-* Configuration
+### Location (Index)
+Method: GET    
+`/api/v1/locations`   
+```json
+{
+  "Header" : 
+    { 
+    "Authorization" : "Bearer <TOKEN>"
+    }
+ }
+ ```  
+-------
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Properties (Index,show,create,update,delete)
+Method: GET,POST,PUT,DELETE   
+`/api/v1/properties`  ⇒ for Index   
+`/api/v1/properties/:id` ⇒for Show, create, update, delete (must be creator for update & delete)   
+```json
+{
+  "Header" : 
+    { 
+    "Authorization" : "Bearer <TOKEN>"
+    }
+ }
+ ```  
+-------
