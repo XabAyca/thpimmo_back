@@ -1,24 +1,76 @@
-# README
+# Request on our API thpimmo_back :
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+base URL : [https://thpimmo-back.herokuapp.com](https://thpimmo-back.herokuapp.com/)   
 
-Things you may want to cover:
+### SIgn up
 
-* Ruby version
+Method: POST   
 
-* System dependencies
+`/api/signup`   
 
-* Configuration
+- params :
 
-* Database creation
+{  
+"user":
+  {"email":"xaafgfgab@yopmaill.com",   
+  "password":"xabi123",   
+  "password_confirmation":"xabi123"   
+  }   
+}   
 
-* Database initialization
+### Login
 
-* How to run the test suite
+method: POST   
 
-* Services (job queues, cache servers, search engines, etc.)
+`/api/login`   
 
-* Deployment instructions
+- params :
 
-* ...
+{  
+"user":
+  {"email":"xaafgfgab@yopmaill.com",   
+  "password":"xabi123"     
+  }   
+}   
+
+### Logout
+
+Method: DELETE   
+
+`/api/logout`   
+
+Header : {Authorization : Bearer <TOKEN>}   
+
+### User (Show)
+
+Method: GET   
+
+`/api/v1/users/:id`   
+
+Header : {Authorization : Bearer <TOKEN>}   
+
+### Category (Index)
+
+Method: GET   
+
+`/api/v1/categories`   
+
+Header : {Authorization : Bearer <TOKEN>}   
+
+### Location (Index)
+
+Method: GET    
+
+`/api/v1/locations`   
+
+Header : {Authorization : Bearer <TOKEN>}   
+
+### Properties (Index,show,create,update,delete)
+
+Method: GET,POST,PUT,DELETE   
+
+`/api/v1/properties`  ⇒ for Index   
+
+`/api/v1/properties/:id` ⇒for Show, create, update, delete (must be creator for update & delete)   
+
+Header : {Authorization : Bearer <TOKEN>}    
