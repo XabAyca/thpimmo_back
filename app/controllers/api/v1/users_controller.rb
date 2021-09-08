@@ -8,7 +8,7 @@ class Api::V1::UsersController < Api::BaseController
 
   def index 
     @users = User.all 
-    render_jsonapi_response(@users)
+    render json:@users
   end
 
   private
