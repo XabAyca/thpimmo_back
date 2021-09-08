@@ -6,6 +6,11 @@ class Api::V1::UsersController < Api::BaseController
     render_jsonapi_response(@user)
   end
 
+  def index 
+    @users = User.all 
+    render_jsonapi_response(@users)
+  end
+
   private
 
   def find_user
