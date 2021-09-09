@@ -12,11 +12,11 @@ User.destroy_all
 p "Destroying Category... #{Category.count} "
 Category.destroy_all
 
-p "Destroying Location... #{Location.count} "
-Location.destroy_all
-
 p "Destroying Property... #{Property.count} "
 Property.destroy_all
+
+p "Destroying Location... #{Location.count} "
+Location.destroy_all
 
 p "-" * 50
 p "-" * 50
